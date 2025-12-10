@@ -540,32 +540,27 @@ function toggleMoreFaq() {
 let voiceSlideIndex = 0;
 let isFirstLoad = true;
 
-// 初期化
-initVoiceSlideshow();
-
-function initVoiceSlideshow() {
-  const slides = document.getElementsByClassName("voice-slide");
-  const dotsContainer = document.querySelector(".voice-dots");
-  
-  // インジケーター作成
-  for (let i = 0; i < slides.length; i++) {
-    const dot = document.createElement("span");
-    dot.className = "voice-dot";
-    dot.onclick = function() {
-      voiceSlideIndex = i;
-      showVoiceSlide(false);
-    };
-    dotsContainer.appendChild(dot);
-  }
-  
-  showVoiceSlide(false);
+function nextVoiceSlide() {
+  voiceSlideIndex++;
+  showVoiceSlide(true);
 }
 
+function prevVoiceSlide() {
+  voiceSlideIndex--;
+  showVoiceSlide(true);
+}
+
+function changeVoiceSlide(direction) {
+  voiceSlideIndex += direction;
+  showVoiceSlide(true);
+}
+
+/* ★★★ ここから下を新しいコードに差し替える ★★★ */
 function showVoiceSlide(animate = true) {
   const slides = document.getElementsByClassName("voice-slide");
   const dots = document.getElementsByClassName("voice-dot");
   
-  // インデックスの範囲調整
+  // インデックス範囲の調整
   if (voiceSlideIndex < 0) {
     voiceSlideIndex = slides.length - 1;
   }
@@ -573,67 +568,38 @@ function showVoiceSlide(animate = true) {
     voiceSlideIndex = 0;
   }
   
-  // ドット更新
+  // ドットの更新
   for (let i = 0; i < dots.length; i++) {
     dots[i].classList.remove("active");
   }
   dots[voiceSlideIndex].classList.add("active");
   
-  // 全スライドを表示状態に
+  // ★ 修正ポイント：「全部非表示 → 対象だけ表示」
   for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "block";
+    slides[i].style.display = "none";
+    slides[i].style.zIndex = "1";
   }
-  
+
   const newSlide = slides[voiceSlideIndex];
-  
-  // 新しいスライドを最前面に(z-index: 3)
-  newSlide.style.zIndex = "3";
-  
+  newSlide.style.display = "block";   // 表示するのは1枚だけ
+  newSlide.style.zIndex = "3";       // 最前面に
+
   // ボタンクリック時のみアニメーション
   if (animate && !isFirstLoad) {
-    // 画面幅に応じてアニメーション時間を変更
     const isMobile = window.innerWidth <= 768;
     const animationDuration = isMobile ? "1s" : "2s";
     
-    // アニメーションをリスタート
     newSlide.style.animation = "none";
-    newSlide.style.transform = "translateX(-100%)"; // 左から開始
+    newSlide.style.transform = "translateX(-100%)";
     
     setTimeout(() => {
       newSlide.style.animation = `voiceSlideIn ${animationDuration} ease-in-out forwards`;
     }, 10);
   } else {
-    // 初回表示はアニメーションなし
     newSlide.style.animation = "none";
     newSlide.style.transform = "translateX(0)";
   }
-  
-  // アニメーション完了後、z-indexを整理
-  if (animate && !isFirstLoad) {
-    const isMobile = window.innerWidth <= 768;
-    const animationDuration = isMobile ? 1000 : 2000;
-    
-    setTimeout(() => {
-      // 新しいスライドをz-index: 2に
-      newSlide.style.zIndex = "2";
-      
-      // 他のスライドをz-index: 1に
-      for (let i = 0; i < slides.length; i++) {
-        if (i !== voiceSlideIndex) {
-          slides[i].style.zIndex = "1";
-        }
-      }
-    }, animationDuration);
-  } else {
-    // 初回表示時は即座に整理
-    newSlide.style.zIndex = "2";
-    for (let i = 0; i < slides.length; i++) {
-      if (i !== voiceSlideIndex) {
-        slides[i].style.zIndex = "1";
-      }
-    }
-  }
-  
+
   isFirstLoad = false;
 }
 
