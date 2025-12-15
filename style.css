@@ -1165,9 +1165,15 @@ img.noimg {
 }
 
 .tyusyaku {
-    color: #939393;
-    font-size: 13px;
-    margin: 50px 25px 0;
+  color: #939393;        /* 薄いグレー */
+  font-size: 13px;
+  text-align: center;     /* 中央寄せ */
+  margin: 15px auto 40px; /* 上下バランス調整 */
+}
+
+.tyusyaku a {
+  text-decoration: none;  /* 下線を消す */
+  color: #939393;         /* 同系色 */
 }
 
 #flow .container {
