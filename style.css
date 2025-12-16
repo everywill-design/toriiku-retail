@@ -1632,3 +1632,32 @@ section {
 }
 				
         }
+
+
+/* ===== 年末感謝祭フッター：上の青い余白を詰める（追記用）===== */
+footer.footermenu2{
+  padding: 6px 0 8px;
+  margin: 0;
+}
+
+/* 上の「＼年末感謝祭…／」の下余白を減らす */
+footer.footermenu2 .cta-topline{
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+@media (max-width: 820px){
+  footer.footermenu2{
+    padding: 4px 0 6px;
+  }
+  footer.footermenu2 .cta-topline{
+    margin: 0 0 4px;
+    font-size: 12px;
+  }
+}
+
+/* container由来の余白を殺す（まだ空く場合のみ） */
+footer.footermenu2 .container{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
