@@ -829,7 +829,15 @@ line-height: 1.5;
     position: sticky;
     bottom: 0;
         z-index: 3;
+		 padding-top: 6px;
+  　　　　padding-bottom: 8px;
 		}
+
+
+      .footermenu2 .container {
+        padding-top: 0;
+        padding-bottom: 0;
+       }
 
         .footermenu2 .cta-topline{
   color: #fff;
