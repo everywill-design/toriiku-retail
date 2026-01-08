@@ -1661,3 +1661,15 @@ footer.footermenu2 .container{
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
+
+/* 仕組み5ステップの説明文だけ小さくする */
+.mechanismlist p{
+  font-size: 14px;   /* PC用：今より少し小さく */
+  line-height: 1.6;
+}
+
+@media (max-width: 820px){
+  .mechanismlist p{
+    font-size: 12px; /* スマホ用 */
+  }
+}
