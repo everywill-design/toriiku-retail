@@ -1814,3 +1814,37 @@ footer.footermenu2 .container{
         max-width: 350px !important;
     }
 }
+
+/* --- 移動したtoriiku-infoのレイアウト調整 --- */
+.toriiku-info {
+    display: flex;
+    align-items: center; /* 垂直中央揃え */
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.toriiku-info .feature-list {
+    flex: 1;
+    margin: 0;
+}
+
+.toriiku-info .slideshow-container {
+    flex: 1;
+    max-width: 50%;
+    margin: 0;
+    position: relative;
+    min-height: 300px; /* スライドが表示される高さを確保 */
+}
+
+/* スマホ表示 */
+@media (max-width: 820px) {
+    .toriiku-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .toriiku-info .slideshow-container {
+        max-width: 100%;
+        width: 100%;
+        min-height: 200px;
+    }
+}
