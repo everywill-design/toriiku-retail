@@ -1848,3 +1848,8 @@ footer.footermenu2 .container{
         min-height: 200px;
     }
 }
+
+/* 問い合わせボタン（電話相談→問い合わせ用） */
+.cta-button.tocontact img{
+  max-height: 32px;
+}
