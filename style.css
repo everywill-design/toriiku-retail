@@ -1853,3 +1853,8 @@ footer.footermenu2 .container{
 .cta-button.tocontact img{
   max-height: 32px;
 }
+
+/* お悩み（problem）：3ボックス下の追加見出し */
+#problem .problem-subcopy{
+  margin-top: 30px;
+}
