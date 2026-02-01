@@ -1919,3 +1919,41 @@ footer.footermenu2 .container{
   font-size: 20px;
   font-weight: bold;
 }
+
+/* 導入効果と事例の間：3ボックス */
+.effect-boxes {
+  padding: 40px 0 60px;
+}
+
+.effect-boxes-inner {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.effect-box {
+  flex: 1;
+  max-width: 320px;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.effect-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* スマホ */
+@media (max-width: 820px) {
+  .effect-boxes-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .effect-box {
+    max-width: 100%;
+  }
+}
