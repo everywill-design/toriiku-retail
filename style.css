@@ -1957,3 +1957,36 @@ footer.footermenu2 .container{
     max-width: 100%;
   }
 }
+
+/* 導入効果：3ボックスの横幅調整（PCのみ） */
+.effect-boxes-inner {
+  max-width: 900px;      /* ← ここが一番重要 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.effect-box {
+  flex: 1;
+  max-width: 280px;      /* 画像が大きくなりすぎない保険 */
+}
+
+.effect-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* スマホは今まで通り縦並び */
+@media (max-width: 820px) {
+  .effect-boxes-inner {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .effect-box {
+    max-width: 100%;
+  }
+}
