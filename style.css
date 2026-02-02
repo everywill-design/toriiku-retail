@@ -2082,3 +2082,26 @@ footer.footermenu2 .container{
         font-size: 30px !important;
     }
 }
+
+
+/* 「さらにこんなメリットも」セクション専用の調整 */
+#effects + .section-label-center .section-title {
+    margin-bottom: 20px !important; /* 見出し下の余白を大幅にカット */
+    padding-bottom: 0 !important;
+}
+
+/* ボックスを包むセクションの上余白をカット */
+.effect-boxes {
+    padding-top: 0 !important; 
+}
+
+.effect-boxes .container {
+    margin-top: 0 !important;
+}
+
+/* PC表示（821px以上）でさらに詰めたい場合 */
+@media (min-width: 821px) {
+    .effect-boxes-inner {
+        margin-top: -20px !important; /* ネガティブマージンで強制的に接近 */
+    }
+}
