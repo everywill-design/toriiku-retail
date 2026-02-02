@@ -2008,3 +2008,35 @@ footer.footermenu2 .container{
   line-height: 1;          /* 行ズレ防止 */
 }
 
+/* FAQ全体のレイアウトをリセットして左揃えに固定 */
+.faq-question, .faq-answer {
+    display: flex !important;
+    align-items: flex-start !important; /* 上揃え（アイコンが大きいので上が綺麗に見えます） */
+    gap: 15px !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    border-bottom: 1px solid #003DA5 !important;
+}
+
+/* QとAのアイコン幅を統一してテキストの開始位置を揃える */
+.faq-question::before, .faq-answer::before {
+    flex-shrink: 0 !important;
+    width: 45px !important; /* ここでQとAの幅を固定 */
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    position: static !important; /* absolute指定を解除 */
+    font-size: 50px !important;
+    line-height: 1 !important;
+}
+
+/* スマホ用の微調整（末尾に貼る場合はこれも必須） */
+@media (max-width: 820px) {
+    .faq-question, .faq-answer {
+        gap: 10px !important;
+    }
+    .faq-question::before, .faq-answer::before {
+        width: 30px !important;
+        font-size: 30px !important;
+    }
+}
