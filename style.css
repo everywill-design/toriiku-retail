@@ -1664,7 +1664,7 @@ footer.footermenu2 .container{
 
 /* 仕組み5ステップの説明文だけ小さくする */
 .mechanismlist p{
-  font-size: 12px;   /* PC用：今より少し小さく */
+  font-size: 15px;   /* PC用：今より少し小さく */
   line-height: 1.6;
 }
 
