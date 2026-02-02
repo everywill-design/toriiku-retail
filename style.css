@@ -2040,3 +2040,45 @@ footer.footermenu2 .container{
         font-size: 30px !important;
     }
 }
+
+/* FAQ全体のテキストを強制的に左寄せし、アイコンの横に並べる */
+.faq-question, .faq-answer {
+    display: flex !important;
+    align-items: flex-start !important; /* 上揃え */
+    justify-content: flex-start !important; /* 左寄せ */
+    text-align: left !important; /* 中央寄せを解除 */
+    gap: 15px !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    border-bottom: 1px solid #003DA5 !important;
+}
+
+/* QとAのアイコン幅を固定してテキスト開始位置を垂直に揃える */
+.faq-question::before, .faq-answer::before {
+    content: attr(data-label) !important; /* 文字が消える場合の保険 */
+    flex-shrink: 0 !important;
+    width: 45px !important; 
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    position: static !important;
+    font-size: 50px !important;
+    line-height: 1.2 !important; /* アイコンの高さ調整 */
+}
+
+/* 回答（A）のテキストの余白をリセット */
+.faq-answer {
+    padding-top: 10px !important;
+    padding-bottom: 20px !important;
+}
+
+/* スマホ用の微調整 */
+@media (max-width: 820px) {
+    .faq-question, .faq-answer {
+        gap: 10px !important;
+    }
+    .faq-question::before, .faq-answer::before {
+        width: 30px !important;
+        font-size: 30px !important;
+    }
+}
