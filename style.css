@@ -1990,3 +1990,21 @@ footer.footermenu2 .container{
     max-width: 100%;
   }
 }
+/* ===== FAQ：A を左揃えで固定 ===== */
+.faq-answer {
+  display: flex;
+  align-items: flex-start; /* 上揃え */
+  padding-left: 0;         /* 既存のズレをリセット */
+}
+
+.faq-answer::before {
+  content: "A";
+  display: block;
+  min-width: 40px;         /* Aの横幅を固定 */
+  margin: 0 15px 0 0;      /* Aと本文の間隔 */
+  font-size: 50px;
+  font-weight: bold;
+  color: #004aad;
+  line-height: 1;          /* 行ズレ防止 */
+}
+
