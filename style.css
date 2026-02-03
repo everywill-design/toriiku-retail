@@ -2259,3 +2259,26 @@ footer.footermenu2 .container{
     line-height: 1.6;
   }
 }
+
+/* --- PC：左テキスト＋右画像レイアウトを強制 --- */
+@media (min-width: 821px){
+
+  .toriiku-info{
+    display: flex;
+    align-items: flex-start;   /* 上揃え */
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .toriiku-info .feature-list{
+    flex: 0 0 55%;   /* 左を55%固定 */
+    max-width: none; /* 715px制限を解除 */
+  }
+
+  .toriiku-info .slideshow-container{
+    flex: 0 0 40%;   /* 右を40%固定 */
+    max-width: 40%;
+    margin: 0;
+  }
+
+}
