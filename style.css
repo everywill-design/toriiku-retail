@@ -2173,3 +2173,38 @@ footer.footermenu2 .container{
 .feature-item.no-thumb {
     padding-left: 0 !important;
 }
+
+/* --- 1番目の文（キャッチコピー）専用の設定 --- */
+.main-catch-area {
+    text-align: center; /* PC・スマホ共に中央寄せ */
+    width: 100%;
+    margin-bottom: 30px; /* 下のリストとの間隔 */
+}
+
+/* 親指アイコンを強制的に消す */
+.main-catch-area .feature-item.no-thumb::before {
+    display: none !important;
+}
+
+.main-catch-area .feature-item.no-thumb {
+    display: inline-block !important; /* 中央寄せを効かせるため */
+    padding-left: 0 !important;
+    font-size: 18px; /* 下のリストとサイズを統一 */
+    line-height: 1.5;
+}
+
+/* キャッチコピー下の注釈専用スタイル */
+.tyusyaku-catch {
+    color: #939393;
+    font-size: 13px;
+    margin: 5px 0 0 0;
+    text-align: center;
+}
+
+/* スマホ用の微調整（必要に応じて） */
+@media (max-width: 820px) {
+    .main-catch-area .feature-item.no-thumb {
+        font-size: 15px; /* スマホの本文サイズに合わせる */
+        padding: 0 10px !important;
+    }
+}
