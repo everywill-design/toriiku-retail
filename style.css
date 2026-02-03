@@ -2663,3 +2663,87 @@ footer.footermenu2 .container{
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+
+/* ==============================
+   スポット設置セクション：完全修復コード
+   ============================== */
+
+/* --- ① PC版：横並びを強制し、画像サイズを適正化 --- */
+@media (min-width: 821px) {
+  .toriiku-info {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 40px !important;
+    max-width: 1100px;
+    margin: 40px auto !important;
+  }
+
+  .toriiku-info .feature-list {
+    flex: 0 0 55% !important;
+    margin: 0 !important;
+  }
+
+  .toriiku-info .slideshow-container {
+    flex: 0 0 42% !important;
+    max-width: 42% !important;
+    position: relative !important;
+    margin: 10px 0 0 0 !important;
+    min-height: 320px !important; /* 画像の高さを確保し、下の文字との重なりを防止 */
+    overflow: visible !important;
+  }
+}
+
+/* スライド画像の設定 */
+.slideshow-container .slide img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ボタンを画像の右端（黄色丸の位置）に配置 */
+.slideshow-container .next-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: 15px !important;
+  transform: translateY(-50%) !important;
+  z-index: 100 !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  border: none !important;
+  font-size: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* --- ② スマホ版のみ：文字サイズを大きくしない --- */
+@media (max-width: 820px) {
+  .toriiku-info {
+    display: block !important;
+  }
+  
+  /* スマホの時だけ、この部分の文字を他と同じサイズにする */
+  .sp-small-text strong {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    line-height: 1.6 !important;
+  }
+
+  .slideshow-container {
+    width: 100% !important;
+    margin: 30px auto !important;
+    min-height: 220px !important;
+  }
+  
+  .next-btn {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 24px !important;
+    right: 10px !important;
+  }
+}
