@@ -2585,3 +2585,81 @@ footer.footermenu2 .container{
         font-size: 14px !important;
     }
 }
+
+/* --- スポット設置セクション専用の修正案 --- */
+
+/* ① PC版：確実に横並びにし、画像を下に落とさない */
+@media (min-width: 821px) {
+    .toriiku-info-fixed {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 40px !important;
+        max-width: 1100px;
+        margin: 40px auto !important;
+    }
+    .feature-list-fixed {
+        flex: 0 0 55% !important;
+        margin: 0 !important;
+    }
+    .slideshow-container-fixed {
+        flex: 0 0 42% !important; /* 画像の幅 */
+        position: relative !important;
+        min-height: 300px !important;
+    }
+    .catch-area-fixed {
+        text-align: center !important;
+        margin-bottom: 25px !important;
+    }
+}
+
+/* スライドボタンの共通設定（画像内の右端） */
+.next-btn-fixed {
+    position: absolute !important;
+    top: 50% !important;
+    right: 15px !important;
+    transform: translateY(-50%) !important;
+    z-index: 100 !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 30px !important;
+}
+
+/* ② スマホ版：文字サイズを大きくせず、縦並びにする */
+@media (max-width: 820px) {
+    .toriiku-info-fixed {
+        display: block !important;
+    }
+    /* スマホのみ：キャッチコピーの文字を他と同じ15pxに固定 */
+    .sp-normal-text strong {
+        font-size: 15px !important; 
+        font-weight: bold !important;
+    }
+    .slideshow-container-fixed {
+        width: 100% !important;
+        margin: 30px auto !important;
+        min-height: 220px !important;
+    }
+    .next-btn-fixed {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 24px !important;
+        right: 10px !important;
+    }
+}
+
+/* 画像自体の角丸と影 */
+.slideshow-container-fixed .slide img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
