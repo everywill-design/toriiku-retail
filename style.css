@@ -2243,3 +2243,19 @@ footer.footermenu2 .container{
         font-size: 15px; /* 下の文のサイズに合わせる */
     }
 }
+
+/* スマホのみ：該当テキストの上に1行分の余白 */
+@media (max-width: 820px){
+  .catch-center-area .feature-item.no-thumb strong{
+    display: block;
+    margin-top: 1em;   /* ← 1行分の余白 */
+  }
+}
+
+/* PCのみ：該当キャッチを少し大きく */
+@media (min-width: 821px){
+  .catch-center-area .feature-item.no-thumb strong{
+    font-size: 20px;   /* お好みで 19〜22px 調整可 */
+    line-height: 1.6;
+  }
+}
