@@ -2208,3 +2208,38 @@ footer.footermenu2 .container{
         padding: 0 10px !important;
     }
 }
+
+/* --- 特定の一文のみ中央揃えにする設定 --- */
+.catch-center-area {
+    text-align: center; /* PC・スマホ共に中央寄せ */
+    width: 100%;
+    margin-bottom: 25px; /* 下のリストとの余白 */
+}
+
+/* 親指アイコンをこのエリアだけ強制的に消去 */
+.catch-center-area .feature-item.no-thumb::before {
+    display: none !important;
+}
+
+.catch-center-area .feature-item.no-thumb {
+    display: inline-block !important; /* 中央寄せ用 */
+    padding-left: 0 !important;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 注釈をすぐ下に配置し中央揃え */
+.tyusyaku-inline {
+    display: block;
+    color: #939393;
+    font-size: 13px;
+    margin: 5px 0 15px 0;
+    text-align: center;
+}
+
+/* スマホ用の微調整：リスト全体の並びを整える */
+@media (max-width: 820px) {
+    .catch-center-area .feature-item.no-thumb {
+        font-size: 15px; /* 下の文のサイズに合わせる */
+    }
+}
