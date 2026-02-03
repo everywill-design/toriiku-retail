@@ -2747,3 +2747,28 @@ footer.footermenu2 .container{
     right: 10px !important;
   }
 }
+
+/* ==============================
+   スマホ版の画像切れ・重なり解消（限定修正）
+   ============================== */
+
+/* 820px以下のスマホ表示時のみ適用 */
+@media (max-width: 820px) {
+    .slideshow-container-fixed {
+        /* 高さを中身（画像）に合わせて自動で広げる */
+        min-height: auto !important; 
+        height: auto !important;
+        /* 下のセクション（仕組み〜）との間に十分な余白を作る */
+        margin-bottom: 50px !important; 
+        /* 画像が枠からはみ出さないように調整 */
+        overflow: visible !important;
+        /* 画像の比率を保つための器を作る */
+        aspect-ratio: 4 / 3 !important;
+    }
+
+    .slideshow-container-fixed .slide img {
+        /* 画像が縦に潰れないように強制 */
+        object-fit: contain !important;
+        height: auto !important;
+    }
+}
