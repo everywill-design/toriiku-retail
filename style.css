@@ -2164,3 +2164,12 @@ footer.footermenu2 .container{
         gap: 10px !important;
     }
 }
+
+/* 1番目の文の親指を消し、左揃えにする */
+.feature-item.no-thumb::before {
+    display: none !important;
+}
+
+.feature-item.no-thumb {
+    padding-left: 0 !important;
+}
