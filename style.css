@@ -2282,3 +2282,32 @@ footer.footermenu2 .container{
   }
 
 }
+
+
+/* ==============================
+   PC：テキスト左・画像右を強制固定
+   ============================== */
+@media (min-width: 821px){
+
+  .toriiku-info{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 80px;
+  }
+
+  .toriiku-info .feature-list{
+    flex: 0 0 50% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .toriiku-info .slideshow-container{
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+    margin: 0 !important;
+    position: relative;
+  }
+
+}
