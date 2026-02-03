@@ -2424,3 +2424,90 @@ footer.footermenu2 .container{
     height: auto;
   }
 }
+
+/* ==============================
+   【最優先】お悩み解決セクション修正
+   ============================== */
+
+/* 1. 注釈を小さく、グレーに戻す */
+.tyusyaku {
+  color: #939393 !important;
+  font-size: 13px !important;
+  text-align: center !important;
+  margin: 15px auto 10px !important;
+  display: block !important;
+}
+
+/* 2. PC版の横並びと中央寄せ設定 */
+@media (min-width: 821px) {
+  .toriiku-info {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 50px !important;
+    margin: 40px auto !important;
+  }
+
+  /* テキスト側 */
+  .feature-list {
+    flex: 0 0 55% !important;
+    margin: 0 !important;
+  }
+
+  /* キャッチコピーの中央寄せを復活 */
+  .catch-center-area {
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 25px !important;
+  }
+
+  .catch-center-area .feature-item.no-thumb {
+    display: inline-block !important;
+    text-align: center !important;
+  }
+
+  /* 3. 画像スライドの表示修正（高さを確保） */
+  .slideshow-container {
+    flex: 0 0 40% !important;
+    max-width: 40% !important;
+    margin: 0 !important;
+    position: relative !important;
+    min-height: 350px !important; /* ← これがないと画像が消えます */
+    overflow: visible !important;
+  }
+}
+
+/* スライド画像を枠いっぱいに表示 */
+.slideshow-container .slide img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* PC版の矢印ボタン位置調整 */
+@media (min-width: 821px) {
+  .slideshow-container .next-btn {
+    right: -25px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 50px !important;
+  }
+}
+
+/* スマホ版のデザイン維持 */
+@media (max-width: 820px) {
+  .toriiku-info {
+    display: block !important;
+  }
+  .slideshow-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 250px !important; /* スマホ用高さ */
+    margin: 30px auto !important;
+  }
+  .tyusyaku {
+    padding: 0 20px !important;
+  }
+}
