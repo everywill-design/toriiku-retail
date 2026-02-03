@@ -2772,3 +2772,38 @@ footer.footermenu2 .container{
         height: auto !important;
     }
 }
+
+/* ==============================
+   スマホ版：画像切れを物理的に防ぐ
+   ============================== */
+@media (max-width: 820px) {
+    .slideshow-container-fixed {
+        /* 1. 高さを「0」にして、paddingで比率（4:3）を作る */
+        height: 0 !important;
+        padding-bottom: 75% !important; /* 横幅100%に対し高さ75%を強制確保 */
+        
+        /* 2. 下の見出しとの間にしっかり余白を空ける */
+        margin-bottom: 60px !important; 
+        
+        min-height: auto !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+
+    .slideshow-container-fixed .slide img {
+        /* 3. 確保した枠の中に画像をぴったり収める */
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important; /* 画像が欠けないように収める */
+    }
+
+    /* 矢印ボタンが画像からはみ出さないよう調整 */
+    .next-btn-fixed {
+        top: 50% !important;
+        right: 10px !important;
+        transform: translateY(-50%) !important;
+    }
+}
