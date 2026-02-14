@@ -2881,3 +2881,80 @@ footer.footermenu2 .container{
         100% { transform: translateX(-3960px); }
     }
 }
+
+/* ============================================================
+   【追記】実績ロゴ 無限ループスライダー (密集版)
+   ============================================================ */
+.result-logos {
+    padding: 50px 0 20px !important; /* 上下の余白調整 */
+    background: #fff !important;
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+.result-title {
+    font-size: 24px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    margin-bottom: 30px !important;
+    color: #333 !important;
+    line-height: 1.5 !important;
+}
+
+.logo-slider {
+    display: flex !important;
+    width: 100% !important;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); /* 両端を少しぼかす(参考サイト風) */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.logo-track {
+    display: flex !important;
+    animation: scroll-loop-final 60s linear infinite !important;
+    white-space: nowrap !important;
+}
+
+.logo-item {
+    width: 160px !important; /* ロゴの間隔を狭く設定 */
+    flex-shrink: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 10px !important;
+}
+
+.logo-item img {
+    max-height: 50px !important; /* ロゴの高さを少し小さくして密集感を出す */
+    width: auto !important;
+    max-width: 130px !important;
+    object-fit: contain !important;
+}
+
+/* PC用：160px × 22枚 = 3520px 移動 */
+@keyframes scroll-loop-final {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-3520px); }
+}
+
+/* スマホ対応 */
+@media (max-width: 820px) {
+    .result-logos {
+        padding: 30px 0 10px !important;
+    }
+    .result-title {
+        font-size: 18px !important;
+        margin-bottom: 20px !important;
+        padding: 0 15px !important;
+    }
+    .logo-item {
+        width: 120px !important; /* スマホはさらに狭める */
+    }
+    .logo-item img {
+        max-height: 35px !important;
+    }
+    /* スマホ用：120px × 22枚 = 2640px 移動 */
+    @keyframes scroll-loop-final {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-2640px); }
+    }
+}
