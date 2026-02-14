@@ -2807,3 +2807,77 @@ footer.footermenu2 .container{
         transform: translateY(-50%) !important;
     }
 }
+
+/* --- 無限ループスライダー（22枚専用） --- */
+.result-logos {
+    padding: 60px 0 40px;
+    background: #fff;
+    overflow: hidden;
+    width: 100%;
+}
+
+.result-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.logo-slider {
+    display: flex;
+    width: 100%;
+}
+
+.logo-track {
+    display: flex;
+    /* 100秒かけて1周（22枚分移動）。速度を速めるなら80s、遅くするなら120sに変更してください */
+    animation: scroll-loop-22 100s linear infinite;
+    white-space: nowrap;
+}
+
+.logo-item {
+    width: 250px; /* 1枚あたりの確保幅 */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.logo-item img {
+    max-height: 55px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+/* PC用：250px × 22枚 = 5500px 移動 */
+@keyframes scroll-loop-22 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-5500px); }
+}
+
+/* スマホ対応 */
+@media (max-width: 820px) {
+    .result-logos {
+        padding: 40px 0 20px;
+    }
+    .result-title {
+        font-size: 18px;
+        margin-bottom: 25px;
+        padding: 0 15px;
+    }
+    .logo-item {
+        width: 180px; /* スマホは少し小さくして表示数を増やす */
+        padding: 0 15px;
+    }
+    .logo-item img {
+        max-height: 40px;
+    }
+    /* スマホ用：180px × 22枚 = 3960px 移動 */
+    @keyframes scroll-loop-22 {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-3960px); }
+    }
+}
