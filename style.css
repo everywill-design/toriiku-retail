@@ -3141,3 +3141,86 @@ footer.footermenu2 .container{
         100% { transform: translateX(-2640px); }
     }
 }
+
+/* ROI Impact Section Styles */
+#roi-impact {
+    padding: 80px 0;
+    background-color: #f8f9fb;
+}
+
+.roi-impact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 40px auto 0;
+    max-width: 1000px;
+}
+
+/* ROIカード */
+.roi-highlight-card {
+    background: linear-gradient(135deg, #004aad 0%, #002a63 100%);
+    color: #fff;
+    padding: 50px 40px;
+    border-radius: 24px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 20px 40px rgba(0, 74, 173, 0.2);
+}
+
+.roi-label-top {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+.roi-main-value {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.roi-main-value .small { font-size: 20px; vertical-align: middle; margin-right: 5px; }
+.roi-main-value .percent { font-size: 36px; }
+
+/* 注釈扱いのデザイン */
+.roi-footnote {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+/* 要約ポイント */
+.roi-points-summary {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.summary-item .icon { font-size: 32px; }
+.summary-item p { font-size: 15px; line-height: 1.5; margin: 0; color: #555; }
+.summary-item strong { color: #004aad; font-size: 18px; display: block; margin-bottom: 4px; }
+
+/* スマホ対応 */
+@media (max-width: 820px) {
+    #roi-impact { padding: 60px 0; }
+    .roi-impact-container { flex-direction: column; gap: 20px; }
+    .roi-highlight-card { width: 100%; padding: 40px 20px; }
+    .roi-main-value { font-size: 64px; }
+    .summary-item { padding: 15px; }
+}
