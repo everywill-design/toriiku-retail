@@ -3554,3 +3554,115 @@ footer.footermenu2 .container{
     .roi-symbol { font-size: 24px; }
     .roi-main-desc { font-size: 17px; text-align: center; }
 }
+
+/* --- ROI Impact Section (Final Version) --- */
+#roi-impact {
+    padding: 30px 0; 
+    background-color: #F5F7FA; /* 仕組みセクションと同様のグレー */
+}
+
+/* タイトル余白の調整 */
+.roi-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.roi-flex-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 40px;
+    max-width: 1000px; /* 全体幅を少し広げて調整 */
+    margin: 0 auto;
+}
+
+/* 左側：グラデーションカード（箱を大きく調整） */
+.roi-gradient-card {
+    background: linear-gradient(45deg, #9358f7, #10d7e2); /* お悩み解決の帯と同様 */
+    color: #fff;
+    padding: 50px 30px; /* 上下を少し厚くして高級感を出す */
+    border-radius: 20px;
+    text-align: center;
+    flex: 0 0 420px; /* 箱の横幅を大きく確保 */
+    box-shadow: 0 10px 25px rgba(147, 88, 247, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.roi-label-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 数字と単位を一行に固定 */
+.roi-main-num {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    white-space: nowrap; /* 強制一行 */
+}
+
+.roi-prefix { 
+    font-size: 20px; 
+    margin-right: 10px; 
+    font-weight: bold;
+}
+
+.roi-number-wrap {
+    font-size: 80px; /* 数字を大きく強調 */
+    font-weight: 900;
+    line-height: 1;
+}
+
+.roi-symbol { 
+    font-size: 32px; 
+    margin-left: 2px;
+}
+
+/* 右側：文章テキスト */
+.roi-benefit-text-area {
+    flex: 1;
+}
+
+.roi-main-desc {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* 注釈 */
+.tyusyaku-roi {
+    color: #939393;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 40px;
+    display: block;
+}
+
+/* スマホ対応 */
+@media (max-width: 820px) {
+    #roi-impact { padding: 20px 0; }
+    .roi-title { font-size: 20px; margin-bottom: 20px; padding-top: 10px; }
+    .roi-flex-wrap {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    .roi-gradient-card {
+        flex: 1;
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .roi-number-wrap { font-size: 60px; } /* スマホでは画面幅に合わせて縮小 */
+    .roi-prefix { font-size: 16px; }
+    .roi-main-desc { font-size: 18px; text-align: center; }
+}
