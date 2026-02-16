@@ -3224,3 +3224,122 @@ footer.footermenu2 .container{
     .roi-main-value { font-size: 64px; }
     .summary-item { padding: 15px; }
 }
+
+/* --- ROI Impact Section --- */
+#roi-impact {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+/* タイトルのスタイル統一（実績多数セクション準拠） */
+.roi-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.roi-flex-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* カードとリストの高さを揃える */
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 左側：グラデーションカード（悩み解決の帯と同じ色） */
+.roi-gradient-card {
+    background: linear-gradient(45deg, #9358f7, #10d7e2);
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    flex: 0 0 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(147, 88, 247, 0.2);
+}
+
+.roi-label-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.roi-main-num {
+    font-size: 84px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.roi-prefix { font-size: 22px; vertical-align: middle; margin-right: 5px; }
+.roi-symbol { font-size: 32px; }
+
+.roi-footnote {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* 右側：文章形式のリスト */
+.roi-benefit-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 均等配置でカードの高さに収める */
+    padding: 10px 0;
+}
+
+.roi-benefit-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.roi-benefit-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.roi-benefit-head {
+    font-size: 19px;
+    font-weight: bold;
+    color: #004aad;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.roi-benefit-head::before {
+    content: "■";
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.roi-benefit-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 24px;
+}
+
+/* スマホ表示 */
+@media (max-width: 820px) {
+    .roi-flex-wrap {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    .roi-gradient-card {
+        flex: 1;
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .roi-main-num { font-size: 60px; }
+    .roi-benefit-list { gap: 20px; }
+    .roi-title { font-size: 21px; }
+}
